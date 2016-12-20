@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" minHeight="600.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="constructions.column_rectangle_ec2.CONTROLLER.ControllerMainWindow">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="570.0" prefWidth="380.0" style="-fx-background-color: #c6c9cc; -fx-background-radius: 10;" AnchorPane.leftAnchor="20.0">
+         <children>
+            <Label layoutX="26.0" layoutY="104.0" text="Beton fck:" />
+            <TextField fx:id="textFieldFCK" layoutX="152.0" layoutY="100.0" />
+            <Label layoutX="26.0" layoutY="133.0" text="Stal fyk:" />
+            <TextField fx:id="textFieldFYK" layoutX="152.0" layoutY="129.0" />
+            <Label layoutX="26.0" layoutY="162.0" text="Stal fi:" />
+            <TextField fx:id="textFieldFI" layoutX="152.0" layoutY="158.0" />
+            <Label layoutX="26.0" layoutY="191.0" text="Współczynnik pełzania:" />
+            <TextField fx:id="textFieldPelzanie" layoutX="152.0" layoutY="187.0" />
+            <Label layoutX="26.0" layoutY="9.0" text="Szerokość b" />
+            <Label layoutX="26.0" layoutY="38.0" text="Wysokośc h" />
+            <Label layoutX="26.0" layoutY="66.0" text="a" />
+            <TextField fx:id="textFieldB" layoutX="152.0" layoutY="5.0" />
+            <TextField fx:id="textFieldH" layoutX="152.0" layoutY="34.0" />
+            <TextField fx:id="textFieldA" layoutX="152.0" layoutY="62.0" />
+            <Label layoutX="26.0" layoutY="227.0" text="yc" />
+            <TextField fx:id="textFieldYC" layoutX="152.0" layoutY="223.0" />
+            <Label layoutX="26.0" layoutY="256.0" text="ys" />
+            <TextField fx:id="textFieldYS" layoutX="152.0" layoutY="252.0" />
+            <Label layoutX="24.0" layoutY="349.0" text="NEd" />
+            <TextField fx:id="textFieldNED" layoutX="152.0" layoutY="345.0" />
+            <Label layoutX="25.0" layoutY="378.0" text="MEd" />
+            <TextField fx:id="textFieldMED" layoutX="152.0" layoutY="374.0" />
+            <Label layoutX="25.0" layoutY="427.0" text="H" />
+            <TextField fx:id="textFieldDHd" layoutX="152.0" layoutY="423.0" />
+            <Label layoutX="25.0" layoutY="455.0" text="u" />
+            <TextField fx:id="textFieldU" layoutX="152.0" layoutY="451.0" />
+            <CheckBox fx:id="checkBoxIfSymetric" layoutX="115.0" layoutY="489.0" mnemonicParsing="false" text="Zbrojenie symetryczne" />
+            <Button layoutX="149.0" layoutY="522.0" mnemonicParsing="false" onAction="#calculateAlgorithm" text="Oblicz">
+               <padding>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </padding>
+            </Button>
+            <Label layoutX="316.0" layoutY="9.0" text="[m]" />
+            <Label layoutX="316.0" layoutY="38.0" text="[m]" />
+            <Label layoutX="316.0" layoutY="66.0" text="[m]" />
+            <Label layoutX="316.0" layoutY="227.0" text="[-]" />
+            <Label layoutX="316.0" layoutY="256.0" text="[-]" />
+            <Label layoutX="316.0" layoutY="427.0" text="[m]" />
+            <Label layoutX="316.0" layoutY="455.0" text="[-]" />
+            <Label layoutX="316.0" layoutY="162.0" text="[mm]" />
+            <Label layoutX="316.0" layoutY="104.0" text="[MPa]" />
+            <Label layoutX="316.0" layoutY="133.0" text="[MPa]" />
+            <Label layoutX="316.0" layoutY="349.0" text="[kN]" />
+            <Label layoutX="316.0" layoutY="378.0" text="[kNm]" />
+            <Label layoutX="316.0" layoutY="191.0" text="[-]" />
+            <TextField fx:id="textFieldEc" layoutX="152.0" layoutY="285.0" />
+            <TextField fx:id="textFieldEs" layoutX="152.0" layoutY="314.0" />
+            <Label layoutX="26.0" layoutY="289.0" text="Ec" />
+            <Label layoutX="25.0" layoutY="318.0" text="Es" />
+            <Label layoutX="316.0" layoutY="289.0" text="[GPa]" />
+            <Label layoutX="316.0" layoutY="318.0" text="[GPa]" />
+         </children>
+      </Pane>
+      <Pane layoutX="432.0" layoutY="14.0" prefHeight="570.0" prefWidth="560.0" style="-fx-background-color: #c6c9cc; -fx-background-radius: 10;" AnchorPane.rightAnchor="20.0">
+         <children>
+            <Label layoutX="262.0" layoutY="14.0" text="Dane:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="19.0" layoutY="42.0" prefHeight="97.0" prefWidth="523.0" style="-fx-border-width: 1; -fx-border-color: black;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="b:" GridPane.halignment="CENTER" />
+                  <Label fx:id="label_b" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+                  <Label text="h:" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="a:" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label fx:id="label_h" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                  <Label fx:id="label_a" text="0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                  <Label text="fck:" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                  <Label text="fyk:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="fi:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label text="eff:" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                  <Label text="yc:" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="ys:" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label text="NEd:" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+                  <Label text="MEd:" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="H:" GridPane.columnIndex="8" GridPane.halignment="CENTER" />
+                  <Label text="u:" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label fx:id="label_fck" text="0" GridPane.columnIndex="3" />
+                  <Label fx:id="label_fyk" text="0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="label_fi" text="0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label fx:id="label_eff" text="0" GridPane.columnIndex="5" />
+                  <Label fx:id="label_yc" text="0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label fx:id="label_ys" text="0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Label fx:id="label_NEd" text="0" GridPane.columnIndex="7" />
+                  <Label fx:id="label_MEd" text="0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <Label fx:id="label_Hd" text="0" GridPane.columnIndex="9" />
+                  <Label fx:id="label_u" text="0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Label layoutX="209.0" layoutY="160.0" text="Rezultaty szczegółowe:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="18.0" layoutY="190.0" prefHeight="97.0" prefWidth="523.0" style="-fx-border-color: black;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children></Pane>
+   </children>
+</AnchorPane>
